@@ -3,9 +3,9 @@ logs
 *.log
 npm-debug.log*
 
-# intellij idea
-.idea
-*.iml
+# sublime-text
+*.sublime-workspace
+
 
 # generated directories
 node_modules
