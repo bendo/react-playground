@@ -31,12 +31,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bendo/bendo.github.io.git"
+    "url": "git+https://github.com/bendo/react-playground.git"
   },
   "author": "bendo",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bendo/bendo.github.io/issues"
+    "url": "https://github.com/bendo/react-playground/issues"
   },
-  "homepage": "https://github.com/bendo/bendo.github.io#readme"
+  "homepage": "https://github.com/bendo/react-playground#readme"
 }

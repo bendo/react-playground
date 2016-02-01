@@ -12,45 +12,45 @@ let mainData = {};
 let listeners = Immutable.List();
 
 const store = {
-    addListener: (callback) => listeners = listeners.push(callback),
+  addListener: (callback) => listeners = listeners.push(callback),
 
-    removeListener: (callback) => listeners = listeners.remove(listeners.indexOf(callback)),
+  removeListener: (callback) => listeners = listeners.remove(listeners.indexOf(callback)),
 
-    getState: () => mainData
+  getState: () => mainData
 };
 
 function storeChanged() {
-    listeners.map(f.call);
+  listeners.map(f.call);
 }
 
 function updateData(data) {
-    mainData.name = data.ref.name.value;
-    mainData.age = data.ref.age.value;
-    mainData.sex = data.ref.sex.value;
+  mainData.name = data.ref.name.value;
+  mainData.age = data.ref.age.value;
+  mainData.sex = data.ref.sex.value;
 }
 
 function deleteData() {
-    mainData = {};
+  mainData = {};
 }
 
 function dispatch({type, data}) {
-    switch (type) {
-        case ActionTypes.UPDATE_DATA:
-            updateData(data);
-            storeChanged();
-            break;
-        case ActionTypes.DELETE_DATA:
-            deleteData(data);
-            storeChanged();
-            break;
-    }
+  switch (type) {
+    case ActionTypes.UPDATE_DATA:
+      updateData(data);
+      storeChanged();
+      break;
+    case ActionTypes.DELETE_DATA:
+      deleteData(data);
+      storeChanged();
+      break;
+  }
 }
 
 function load() {
-    mainData = {name: 'alice', age: '33', sex: 'woman'};
-    ReactDOM.render(<Hello store={store} dispatch={dispatch}/>, $j('#react-app')[0]);
+  mainData = {name: 'alice', age: '33', sex: 'woman'};
+  ReactDOM.render(<Hello store={store} dispatch={dispatch}/>, $j('#react-app')[0]);
 }
 
 $j(function () {
-    load();
+  load();
 });

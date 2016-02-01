@@ -6,7 +6,6 @@ npm-debug.log*
 # sublime-text
 *.sublime-workspace
 
-
 # generated directories
 node_modules
 dist
