@@ -1,7 +1,7 @@
 import ActionTypes from './ActionTypes';
 
 function event(type, data) {
-  return {type: type, data: data};
+  return {type: type, payload: data};
 }
 
 export default Object.freeze({

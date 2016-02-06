@@ -4,16 +4,6 @@ import ActionCreator from '../ActionCreator';
 export default class World extends React.Component {
   constructor(props) {
     super(props);
-    this.handleUpdate = this.handleUpdate.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
-  }
-
-  handleUpdate() {
-    this.props.dispatch(ActionCreator.updateData(this.refs, this.props.model));
-  }
-
-  handleDelete() {
-    this.props.dispatch(ActionCreator.deleteData(this.refs, this.props.model));
   }
 
   render() {
