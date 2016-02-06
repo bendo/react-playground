@@ -1,5 +1,6 @@
 import './main.css';
 import $j from 'jquery';
+import React from 'react';
 import ReactDOM from 'react-dom';
 // import {Promise} from 'es6-promise';
 import {applyMiddleware, createStore} from 'redux';
