@@ -8,7 +8,6 @@ export function deleteData() {
 }
 
 export function updateData(name) {
-    window.console.log('refs', name);
     return {
         type: UPDATE_DATA,
         payload: name

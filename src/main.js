@@ -1,5 +1,3 @@
-import './main.css';
-import $j from 'jquery';
 import React from 'react';
 import ReactDOM from 'react-dom';
 //import {Promise} from 'es6-promise';
@@ -18,7 +16,6 @@ function deleteData() {
 }
 
 function mainReducer(state = initialState, {type, payload}) {
-    window.console.log('payload', payload);
     switch (type) {
         case MainActions.DELETE_DATA:
             return deleteData();
@@ -31,6 +28,7 @@ function mainReducer(state = initialState, {type, payload}) {
 
 let store = createStore(mainReducer, initialState, applyMiddleware(promiseMiddleware()));
 
-$j(function () {
-    ReactDOM.render(<Provider store={store}><MainContainer/></Provider>, $j('#react-app')[0]);
-});
+ReactDOM.render(
+    <Provider store={store}><MainContainer/></Provider>, document.getElementById('react-app')
+);
+

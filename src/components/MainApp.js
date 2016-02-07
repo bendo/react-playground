@@ -1,3 +1,4 @@
+import './MainApp.styl';
 import React, {PropTypes} from 'react';
 import Component from 'react-pure-render/component';
 
@@ -8,13 +9,14 @@ export default class MainApp extends Component {
 
     render() {
         const {name, age, sex, actions} = this.props;
+        const {updateData, deleteData} = actions;
         let input;
-        return (<div>
+        return (<div className="hello">
             <p>Hello {name}! - You are {age} old, and you are {sex === 'male' ? 'boy' : 'girl'}</p>
-            <input onChange={() => actions.updateData(input.value)}
+            <input onChange={() => updateData(input.value)}
                    placeholder="Name"
                    ref={(node) => input = node}/>
-            <div onClick={actions.deleteData}>clear</div>
+            <div onClick={deleteData}>clear</div>
         </div>);
     }
 }

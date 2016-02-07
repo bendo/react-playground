@@ -18,7 +18,7 @@ const config = {
                     presets: ['react', 'es2015']
                 }
             },
-            {test: /\.css$/, loader: 'style!css'},
+            {test: /\.styl$/, loader: 'style-loader!css-loader!stylus-loader'},
             {test: /\.html$/, loader: 'file?name=[name].[ext]'}
         ]
     }
