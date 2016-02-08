@@ -1,15 +1,13 @@
-export const DELETE_DATA = 'DELETE_DATA';
-export const UPDATE_DATA = 'UPDATE_DATA';
+import ActionTypes from '../ActionTypes';
+
+function event(type, data) {
+    return {type: type, payload: data};
+}
 
 export function deleteData() {
-    return {
-        type: DELETE_DATA
-    };
+    return event(ActionTypes.DELETE_DATA, {});
 }
 
 export function updateData(name) {
-    return {
-        type: UPDATE_DATA,
-        payload: name
-    };
+    return event(ActionTypes.UPDATE_DATA, name);
 }

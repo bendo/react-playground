@@ -5,8 +5,7 @@ import {applyMiddleware, createStore} from 'redux';
 import {Provider} from 'react-redux';
 import promiseMiddleware from 'redux-promise-middleware';
 import MainContainer from './containers/MainContainer';
-import * as MainActions from './actions/MainActions';
-//import ActionTypes from './ActionTypes';
+import ActionTypes from './ActionTypes';
 //import Immutable from 'immutable';
 
 const initialState = {name: 'Lucy', age: 30, sex: 'female'};
@@ -17,9 +16,9 @@ function deleteData() {
 
 function mainReducer(state = initialState, {type, payload}) {
     switch (type) {
-        case MainActions.DELETE_DATA:
+        case ActionTypes.DELETE_DATA:
             return deleteData();
-        case MainActions.UPDATE_DATA:
+        case ActionTypes.UPDATE_DATA:
             return {name: payload, age: state.age, sex: state.sex};
         default:
             return state;

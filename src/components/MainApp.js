@@ -13,9 +13,7 @@ export default class MainApp extends Component {
         let input;
         return (<div className="hello">
             <p>Hello {name}! - You are {age} old, and you are {sex === 'male' ? 'boy' : 'girl'}</p>
-            <input onChange={() => updateData(input.value)}
-                   placeholder="Name"
-                   ref={(node) => input = node}/>
+            <input onChange={(e) => updateData(e.target.value)} placeholder="Name"/>
             <div onClick={deleteData}>clear</div>
         </div>);
     }
